@@ -1,4 +1,4 @@
-# Stochastic Pattor in the Sheets (SPIT)
+# Stochastic Parrot in the Sheets (SPIT)
 A AI / LLM Prompt function script for use in Google Sheet
 
 # Usage
@@ -12,7 +12,8 @@ Example:
 | Row 3 | The Flight Academy in Renton, WA | =spit("fake-api-key-123-insert-yours-here","Get the website for "&A3)
 
 # Requirements
-- A Google Gemini API Key
-https://aistudio.google.com/app/apikey
+- A Google Gemini API Key from https://aistudio.google.com/app/apikey
 
-- A Google Sheet with App Script
+- A Google Sheet with App Script enabled
+
+
