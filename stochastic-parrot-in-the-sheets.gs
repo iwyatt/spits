@@ -1,4 +1,4 @@
-function spit(apiKey, prompt) {
+function spits(apiKey, prompt) {
   const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + apiKey;
   
   const payload = {
