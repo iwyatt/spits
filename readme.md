@@ -1,5 +1,5 @@
 # Stochastic Parrot in the Sheets (SPITS)
-A AI / LLM Prompt function script for use in Google Sheet
+An AI / LLM Prompt function script for use in Google Sheet
 
 # Usage
 ```=spits(_apikey_, _prompt_)```
