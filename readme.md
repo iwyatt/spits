@@ -32,7 +32,7 @@ The first two examples reference a _single_ cell (eg: A1). The third example sho
 | Row 6 | 11/10/2021	| Cereal	| $5.99 | 
 | Row 7 | 11/11/2021	| Soap	| $3.99 | 
 | Row 8 | | | |
-| Row 9 | =spits("AIzaSyBRUCVO1F44CgGiqfFxuNB5wkdV-Xr709A","How much did I spend on food in total? How much in November?",B14:D20) | | |
+| Row 9 | =spits("{your_api_key}","How much did I spend on food in total? How much in November?",B14:D20) | | |
 
 
 **{Response}**: Here's the breakdown of your food spending:
