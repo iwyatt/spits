@@ -54,12 +54,20 @@ function spits(apiKey, prompt, dataRange) {
   const fullPrompt = prompt + "\n" + tableString;
 
   const payload = {
+  
+  var payload = {
+    safetySettings: [
+      {category: "HARM_CATEGORY_HARASSMENT", "threshold": "BLOCK_ONLY_HIGH"},
+      {category: "HARM_CATEGORY_HATE_SPEECH", "threshold": "BLOCK_ONLY_HIGH"},
+      {category: "HARM_CATEGORY_DANGEROUS_CONTENT", "threshold": "BLOCK_ONLY_HIGH"}
+    ],
     contents: [{
       parts: [{
         text: fullPrompt
       }]
     }]
   };
+
 
   const options = {
     "method": "post",
@@ -69,7 +77,11 @@ function spits(apiKey, prompt, dataRange) {
     }
   };
 
+  console.log(payload);
+
   const response = UrlFetchApp.fetch(url, options);
+  console.log(response);
+
   const content = JSON.parse(response.getContentText());
 
   if (content.candidates && content.candidates.length > 0 && content.candidates[0].content && content.candidates[0].content.parts && content.candidates[0].content.parts.length > 0) {
@@ -79,4 +91,13 @@ function spits(apiKey, prompt, dataRange) {
   } else {
     return "No response generated";
   }
+  console.log(content);
+
+  if (content.candidates.finishReason === 'SAFETY')
+    {return "[Prompt Response Blocked]"}
+  const firstCandidate = content.candidates[0];
+  
+  const generatedText = firstCandidate.content.parts[0].text;
+  
+  return generatedText;
 }
