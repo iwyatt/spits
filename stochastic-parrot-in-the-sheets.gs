@@ -15,7 +15,7 @@
 * Documentation: https://github.com/iwyatt/spits
 * @param {"Count the unique vowels: "} prompt - What you want to ask Google Gemini to do with your data.
 * @param {A1:B2} dataRange - The data you are asking Google Gemini to evalutate.
-* @param {"gemini-2.0-pro-exp-02-05"} modelName [Optional] - Specify a custom Google Gemini model
+* @param {"gemini-2.0-pro-exp-02-05"} modelName [Optional] - A specific Google Gemini model you want to use in your formula
 * @param {"api-key"} apiKey [Optional] - Specify Google Gemini API Key if you didn't update it in the script (see documentation)
 * @return {string} Google Gemini's evaluated result.
 * @customfunction
