@@ -1,14 +1,31 @@
 // SPITS - Stochastic Parrot In The Sheets
 // Isaac Wyatt
 // https://github.com/iwyatt/spits
+// 
+// Get Your API Key Here: https://aistudio.google.com/app/apikey
+// List of models available: https://ai.google.dev/gemini-api/docs/models/gemini#model-variations
+// List of experimental models: https://ai.google.dev/gemini-api/docs/models/experimental-models
+// List of API Limits per Model: https://ai.google.dev/gemini-api/docs/rate-limits
 
-function spits(apiKey, prompt, dataRange) {
-  const url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=" + apiKey;
-
-  // Check if the required parameters are defined
-  if (apiKey === undefined || prompt === undefined) {
-    return "Error: Missing parameters. Ensure you provide apiKey and prompt.";
-  }
+// Replace "{your api key}" with your api key from https://aistudio.google.com/app/apikey
+// gemini-2.0-flash-lite` has the highest number of requests per minute as of 2025-03-02
+/**
+* Ask Google Gemini to evalaute a range of data.
+* 
+* Documentation: https://github.com/iwyatt/spits
+* @param {"Count the unique vowels: "} prompt - What you want to ask Google Gemini to do with your data.
+* @param {A1:B2} dataRange - The data you are asking Google Gemini to evalutate.
+* @param {"gemini-2.0-pro-exp-02-05"} modelName [Optional] - Specify a custom Google Gemini model
+* @param {"api-key"} apiKey [Optional] - Specify Google Gemini API Key if you didn't update it in the script (see documentation)
+* @return {string} Google Gemini's evaluated result.
+* @customfunction
+**/
+function spits(prompt, dataRange, modelName = "gemini-2.0-flash-lite", apiKey = "INSERT_YOUR_API_KEY_HERE") {
+  const baseUrl = "https://generativelanguage.googleapis.com/v1beta/models/";
+  const modelAndMethod = ":generateContent?key=";
+  // if model not specified, use default
+  if (modelName == ""){ modelName = "gemini-2.0-flash-lite"};
+  const url = baseUrl + modelName + modelAndMethod + apiKey;
 
   let values;
   let tableString;
@@ -84,6 +101,6 @@ function spits(apiKey, prompt, dataRange) {
     const generatedText = firstCandidate.content.parts[0].text;
     return generatedText;
   } else {
-    return "No response generated";
+    return "[No response generated]";
   }
 }
