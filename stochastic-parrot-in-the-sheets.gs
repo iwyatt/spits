@@ -7,8 +7,9 @@
 // List of experimental models: https://ai.google.dev/gemini-api/docs/models/experimental-models
 // List of API Limits per Model: https://ai.google.dev/gemini-api/docs/rate-limits
 
-// Replace "{your api key}" with your api key from https://aistudio.google.com/app/apikey
-// gemini-2.0-flash-lite` has the highest number of requests per minute as of 2025-03-02
+// Replace "INSERT_YOUR_API_KEY_HERE" with your api key from https://aistudio.google.com/app/apikey
+// `gemini-2.0-flash-lite` has the highest number of requests per minute as of 2025-03-02
+//
 /**
 * Ask Google Gemini to evalaute a range of data.
 * 

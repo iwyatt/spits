@@ -41,7 +41,7 @@ The first two examples reference a _single_ cell (eg: A1). The third example sho
 | Row 6 | 11/10/2021	| Cereal	| $5.99 | 
 | Row 7 | 11/11/2021	| Soap	| $3.99 | 
 | Row 8 | | | |
-| Row 9 | =spits("How much did I spend on food in total? How much in November?",B14:D20) | | |
+| Row 9 | =spits("How much did I spend on food in total? How much in November?",A1:C7) | | |
 
 
 **{Response}**: Here's the breakdown of your food spending:
@@ -62,7 +62,7 @@ The first two examples reference a _single_ cell (eg: A1). The third example sho
 ## Get a Google Gemini API Key
 - Go to https://aistudio.google.com/app/apikey
 - Click `Create API Key` (you will need this in a moment)
-> If you attempt to create an API key in an org with Google Workspaces, you may need to ask your IT / Engineering team to add you to a Google Cloud Project, or creaete an API Key on your behalf
+> If you attempt to create an API key in an org with Google Workspaces, you may need to ask your IT / Engineering team to add you to a Google Cloud Project, or create an API Key on your behalf
 
 ## Install the Script in Google Sheets
 - Open a Google Sheet that has the data you want to use
@@ -77,7 +77,9 @@ The first two examples reference a _single_ cell (eg: A1). The third example sho
 - Save the file
 - In your Google Sheet, write a formula in a cell as usual using the `spits` function: `=spits("Are you working?", A1:B2)`
 
-> WARNING! If you intend to share this Google Sheet with others, they will be able to see your API Key which would allow them to use your Google Gemini API in other contexts.
+- In the process of saving and attempting to use the formula, you may be asked to grant permission (to your own AppScript project) to make web requests and see data in your Google Sheet. These are the minimum necessary permissions to have the formula send your prompt and cell range to Google Gemini via API. Only the data you include in the Cell range is shared with Google Gemini and _only_ Google Gemini.
+
+> If you intend to share this Google Sheet with other people, they will be able to see your API Key which would allow them to use it in other contexts and use up your API calls.
 
 # Limitations
 - See above warning regarding sharing
