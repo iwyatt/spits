@@ -91,5 +91,13 @@ The first two examples reference a _single_ cell (eg: A1). The third example sho
 - List of experimental models: https://ai.google.dev/gemini-api/docs/models/experimental-models
 - List of API Limits per Model: https://ai.google.dev/gemini-api/docs/rate-limits
 
+# Alternatives
+This functionality is different than, and in my opinion appears to be more useful than [what Google offers for $20/month](https://support.google.com/docs/answer/14218565?hl=en#zippy=%2Center-a-prompt-in-gemini%2Csummarize-spreadsheet-with-gemini%2Ccreate-formulas-with-gemini%2Cgenerate-data-analysis-insights-with-gemini). 
+
+# Further Development
+This works great for me, but if there were sufficient interest in this, I could see developing and publishing this to the Google Sheet Extensions directory.
+- I'd also consider implementing some user-space key storage for the API key so that it could be used more safely in shared Google Sheets. 
+- I'd also like to make it possible for the function to format and insert the response into a group of cells instead of just a single cell
+
 # Warranty
 There is no warranty. Use at your own risk.
