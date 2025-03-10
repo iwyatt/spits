@@ -43,7 +43,6 @@ The first two examples reference a _single_ cell (eg: A1). The third example sho
 | Row 8 | | | |
 | Row 9 | =spits("How much did I spend on food in total? How much in November?",A1:C7) | | |
 
-
 **{Response}**: Here's the breakdown of your food spending:
 
 **Total Spending**: The only items clearly identifiable as food are Milk, Gum, Bananas, and Cereal.  Toothpaste is debatable.  Assuming only the clear food items, your total food spending is 3.49 + 0.99 + 2.99 + 5.99 = $13.46
@@ -58,13 +57,13 @@ The first two examples reference a _single_ cell (eg: A1). The third example sho
 - A Google Gemini API Key from https://aistudio.google.com/app/apikey
 - A Google Sheet with App Script enabled
 
-# Installation
+# Getting set up
 ## Get a Google Gemini API Key
 - Go to https://aistudio.google.com/app/apikey
 - Click `Create API Key` (you will need this in a moment)
 > If you attempt to create an API key in an org with Google Workspaces, you may need to ask your IT / Engineering team to add you to a Google Cloud Project, or create an API Key on your behalf
 
-## Install the Script in Google Sheets
+## Add the Script in Google Sheets
 - Open a Google Sheet that has the data you want to use
 - Under the `Extensions` menu, select `Apps Script`
 - Replace all the lines of `Untitled Project` with the script:
@@ -96,8 +95,8 @@ This functionality is different than, and in my opinion appears to be more usefu
 
 # Further Development
 This works great for me, but if there were sufficient interest in this, I could see developing and publishing this to the Google Sheet Extensions directory.
-- I'd also consider implementing some user-space key storage for the API key so that it could be used more safely in shared Google Sheets. 
-- I'd also like to make it possible for the function to format and insert the response into a group of cells instead of just a single cell
+- Consider implementing some user-space key storage for the API key so that it could be used more safely in shared Google Sheets. 
+- Make it possible for the function to format and insert the response into a group of cells instead of just a single cell
 
 # Warranty
 There is no warranty. Use at your own risk.
