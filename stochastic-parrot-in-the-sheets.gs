@@ -16,12 +16,12 @@
 * Documentation: https://github.com/iwyatt/spits
 * @param {"Count the unique vowels: "} prompt - What you want to ask Google Gemini to do with your data.
 * @param {A1:B2} dataRange - The data you are asking Google Gemini to evalutate.
-* @param {"gemini-2.0-pro-exp-02-05"} modelName [Optional] - A specific Google Gemini model you want to use in your formula
+* @param {"gemini-2.5-flash"} modelName [Optional] - A specific Google Gemini model you want to use in your formula
 * @param {"api-key"} apiKey [Optional] - Specify Google Gemini API Key if you didn't update it in the script (see documentation)
 * @return {string} Google Gemini's evaluated result.
 * @customfunction
 **/
-function spits(prompt, dataRange, modelName = "gemini-2.0-flash-lite", apiKey = "INSERT_YOUR_API_KEY_HERE") {
+function spits(prompt, dataRange, modelName = "gemini-2.5-flash", apiKey = "INSERT_YOUR_API_KEY_HERE") {
   // --- Input Validation and Error Handling ---
   if (!prompt || typeof prompt !== 'string' || prompt.trim() === "") {
     return "[Error: Invalid or empty prompt provided.]";
@@ -36,7 +36,7 @@ function spits(prompt, dataRange, modelName = "gemini-2.0-flash-lite", apiKey = 
   }
 
   if (!modelName || typeof modelName !== 'string' || modelName.trim() === "") {
-      modelName = "gemini-2.0-flash-lite";
+      modelName = "gemini-2.5-flash";
   }
   
   // --- Construct API Endpoint URL ---
