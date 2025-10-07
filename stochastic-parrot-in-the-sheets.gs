@@ -7,7 +7,6 @@
 // Documentation: https://github.com/iwyatt/spits
 // Get Your API Key Here: https://aistudio.google.com/app/apikey
 // List of models available: https://ai.google.dev/gemini-api/docs/models/gemini#model-variations
-// List of experimental models: https://ai.google.dev/gemini-api/docs/models/experimental-models
 // List of API Limits per Model: https://ai.google.dev/gemini-api/docs/rate-limits
 //
 /**
@@ -21,7 +20,7 @@
 * @return {string} Google Gemini's evaluated result.
 * @customfunction
 **/
-function spits(prompt, dataRange, modelName = "gemini-2.5-flash", apiKey = "INSERT_YOUR_API_KEY_HERE") {
+function spits(prompt, dataRange, modelName = "gemini-flash-latest", apiKey = "INSERT_YOUR_API_KEY_HERE") {
   // --- Input Validation and Error Handling ---
   if (!prompt || typeof prompt !== 'string' || prompt.trim() === "") {
     return "[Error: Invalid or empty prompt provided.]";

@@ -7,8 +7,8 @@ A Google Gemini AI / LLM Prompt function script for use in Google Sheets
 ## Parameters explained
 - Prompt: What you want to ask Google Gemini to do with your data
 - Cell/Range: The data you are asking Google Gemini to evalutate
-- Gemini Model: A specific Google Gemini model you want to use in your formula
-- ApiKey: Specify Google Gemini API Key if you didn't update it in the script (See below)
+- Gemini Model (optional): A specific Google Gemini model you want to use in your formula
+- ApiKey (Required if not set): Specify Google Gemini API Key if you didn't update it in the script (See below)
 
 ## Returned Result
 - A text response from Google Gemini in the cell where you placed the formula, or an Error
@@ -61,18 +61,18 @@ The first two examples reference a _single_ cell (eg: A1). The third example sho
 ## Get a Google Gemini API Key
 - Go to https://aistudio.google.com/app/apikey
 - Click `Create API Key` (you will need this in a moment)
-> If you attempt to create an API key in an org with Google Workspaces, you may need to ask your IT / Engineering team to add you to a Google Cloud Project, or create an API Key on your behalf
+    - As of mid-2025, to create the key, you will have to first set up a Google Cloud Project at https://console.cloud.google.com/ before you can create the API key
+> If you attempt to create an API key in an company with Google Workspaces, you may need to ask your IT / Engineering team to add you to a Google Cloud Project, or create an API Key on your behalf
 
 ## Add the Script in Google Sheets
 - Open a Google Sheet that has the data you want to use
 - Under the `Extensions` menu, select `Apps Script`
 - Replace all the lines of `Untitled Project` with the script:
-    - Copy/Paste the [script ](stochastic-parrot-in-the-sheets.gs) in to a Google Sheet of your choice
+    - Copy/Paste the [script](stochastic-parrot-in-the-sheets.gs) in to a Google Sheet of your choice
 - Replace the text "`INSERT_YOUR_API_KEY_HERE`" in the code (somewhere around line 23) with your Google Gemini API Key. 
 
 > After you do this step, the line in the code that starts with `function` would look something like this:
-`function spits(prompt, dataRange, modelName = "gemini-2.0-flash-lite", apiKey = "DummyAPIKey") {`
-
+`function spits(prompt, dataRange, modelName = "gemini-flash-latest", apiKey = "fake_api_key") {`
 - Save the file
 - In your Google Sheet, write a formula in a cell as usual using the `spits` function: `=spits("Are you working?", A1:B2)`
 
@@ -87,11 +87,10 @@ The first two examples reference a _single_ cell (eg: A1). The third example sho
 
 # Additional Documentation
 - List of models available: https://ai.google.dev/gemini-api/docs/models/gemini#model-variations
-- List of experimental models: https://ai.google.dev/gemini-api/docs/models/experimental-models
 - List of API Limits per Model: https://ai.google.dev/gemini-api/docs/rate-limits
 
 # Alternatives
-This functionality is different than, and in my opinion appears to be more useful than [what Google offers for $20/month](https://support.google.com/docs/answer/14218565?hl=en#zippy=%2Center-a-prompt-in-gemini%2Csummarize-spreadsheet-with-gemini%2Ccreate-formulas-with-gemini%2Cgenerate-data-analysis-insights-with-gemini). 
+For Google Workplace accounts, you may be able to use the formula function `=AI()` in Google Sheets to achieve a similar effect. `spits` functionality is different than, and in my opinion appears a better value than [what Google offers for $20/month](https://support.google.com/docs/answer/14218565?hl=en#zippy=%2Center-a-prompt-in-gemini%2Csummarize-spreadsheet-with-gemini%2Ccreate-formulas-with-gemini%2Cgenerate-data-analysis-insights-with-gemini). 
 
 # Further Development
 This works great for me, but if there were sufficient interest in this, I could see developing and publishing this to the Google Sheet Extensions directory.
